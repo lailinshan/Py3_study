@@ -119,24 +119,31 @@ for i in lstr:
     a_dict[i]+=1
 print(a_dict)
 '''
-h1 = input("请输入大写字母\n")
+#定义一个变量存放输入的值
+h1 = input("<<请输入字符>>\n")
+#列表化输入的字符串，这个变量循环后元素会后变化
 hlist1 = list(h1)
-hlist3 = list(h1)
+#列表化输入的字符串，这个变量不参与循环，值保持初始状态
+hlist2 = list(h1)
+#获取列表长度用于控制第一个for循环
 h2 = int(len(hlist1))
-hlist2 = []
+print('<<总共输入了{}个字符>>'.format(h2))
+#第一个for循环实现列表的去重
 for h3 in range(h2):
     try:
-        h4 = hlist1.count(hlist1[h3])
-        if h4 > 1:
+        if hlist1.count(hlist1[h3]) > 1:
             hlist1.remove(hlist1[h3])
-    except:
-        pass
+    except:pass
+#以去重后的列表元素为key生成一个初始值为0的字典
 hdict1 = dict.fromkeys((tuple(hlist1)),0)
-h6 = int(len(hdict1))
-for i in range(h6):
-    h5 = hlist1[i]
-for h5 in hlist3:
-    hdict1[h5] += 1
+#获取字典key的个数
+h5 = int(len(hdict1))
+#循环取出去重后列表的的元素
+for i in range(h5):
+    h4 = hlist1[i]
+#与第二个for循环耦合，用去重后的元素遍历初始列表，实现统计列表中元素出现的个数值
+for h4 in hlist2:
+    hdict1[h4] += 1
 print(hdict1)
 
 
