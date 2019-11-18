@@ -70,7 +70,7 @@ d4 = d5.values()#字典中values转成列表
 print(list(d2))
 print(list(d3))
 print(list(d4))
-#格式化（没明白）
+#格式化后输出的是str类型的值
 d6 = 'a:%(name)s,b:%(name2)s'
 d7 = {'name':'aa','name2':'a33'}
 print(d6 % d7)
